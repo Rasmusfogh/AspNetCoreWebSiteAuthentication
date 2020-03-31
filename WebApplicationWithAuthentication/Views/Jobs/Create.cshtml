@@ -1,0 +1,36 @@
+﻿@model WebApplicationWithAuthentication.Models.Job
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Apply for job at JavaJam</h2>
+<p>
+    Want to work at JavaJam? Fill out the form below to start your application.
+</p>
+<hr />
+<form asp-action="Create" onsubmit="return confirm('Are you sure you want to submit?');">
+    <div class="form-group">
+        <label asp-for="Name" class="control-label"></label>
+        <input asp-for="Name" type="text" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label asp-for="Email" class="control-label"></label>
+        <input asp-for="Email" type="email" class="form-control" required />
+        <small id="emailHelp" class="form-text text-muted">We'll never share your E-mail with anyone else.</small>
+    </div>
+    <div class="form-group">
+        <label asp-for="Experience" class="control-label"></label>
+        <textarea asp-for="Experience" class="form-control" rows="4" placeholder="Your experience..." maxlength="1000" required></textarea>
+        <span asp-validation-for="Experience" class="text-danger"></span>
+    </div>
+    <div>
+        <button type="submit" id="apply" class="btn btn-primary mb-2">Apply now</button>
+        <button type="reset" class="btn btn-primary mb-2">Reset</button>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
