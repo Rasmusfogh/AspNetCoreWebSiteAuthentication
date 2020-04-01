@@ -11,9 +11,9 @@ namespace WebApplicationWithAuthentication.Controllers
 {
     public class JobsController : Controller
     {
-        private readonly JavaJamContext _context;
+        private readonly aspnetWebApplicationWithAuthentication9647194485F94D80B1C5C9E3D93A2302Context _context;
 
-        public JobsController(JavaJamContext context)
+        public JobsController(aspnetWebApplicationWithAuthentication9647194485F94D80B1C5C9E3D93A2302Context context)
         {
             _context = context;
         }

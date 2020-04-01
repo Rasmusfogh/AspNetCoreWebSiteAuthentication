@@ -27,11 +27,13 @@ namespace WebApplicationWithAuthentication
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<JavaJamContext>(options =>
+            
+            services.AddDbContext<aspnetWebApplicationWithAuthentication9647194485F94D80B1C5C9E3D93A2302Context>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<JavaJamContext>();
+                .AddEntityFrameworkStores<aspnetWebApplicationWithAuthentication9647194485F94D80B1C5C9E3D93A2302Context>();
+                
             services.AddControllersWithViews();
             services.AddRazorPages();
         }
